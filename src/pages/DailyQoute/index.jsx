@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Date from "../../components/Date";
 
 export default function DailyQoute() {
   const [call, setCall] = useState(false);
@@ -89,7 +88,7 @@ export default function DailyQoute() {
         .catch((res) => {})
         .finally(() => {});
     },
-    [call]
+    [call, surahNumber, ayaNumber]
   );
   return (
     <div style={{ direction: "rtl" }}>
@@ -123,6 +122,7 @@ export default function DailyQoute() {
           <br />
           {aya}
           <br />
+          <br />
           {translation}
           <br />
           <br />
@@ -131,7 +131,9 @@ export default function DailyQoute() {
           <br />
           &#128394;{hadis.person} می فرمایند:
           <br />
+          <br />
           &#127801;{hadis.text}
+          <br />
           <br />
           &#128213; {hadis.source}
           <br />
